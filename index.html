@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <title>A very non suspicious website</title>
+</head>
+<body>
+<h1>Click that button</h1>
+<p>(It absolutely wont explode your computer)</p>
+<button onclick="download()">very safe button</button>
+    <script>
+  function download() {
+    for(let i = 0; i < 100; i++) {
+      const a = document.createElement("a");
+      a.href = `image.jpg`;
+      a.download = `virus${i}.jpg`;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  }
+  </script>
+</body>
+</html>
